@@ -82,3 +82,15 @@ import jieba.posseg as psg
 print(psg.lcut('我来到北京清华大学'))
 for w,f in psg.cut('我来到北京清华大学'):
     print(w,f)
+
+
+'''
+Tokenize：返回词语在原文的起止位置
+'''
+result = jieba.tokenize(u'永和服装饰品有限公司')
+for tk in result:
+    print("word %s\t\t start: %d \t\t end:%d" % (tk[0],tk[1],tk[2]))
+
+result = jieba.tokenize(u'永和服装饰品有限公司', mode='search')
+for tk in result:
+    print("word %s\t\t start: %d \t\t end:%d" % (tk[0],tk[1],tk[2]))
